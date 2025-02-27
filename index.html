@@ -1,1 +1,341 @@
-Hello World
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Имя Фамилия - Сайт-визитка</title>
+    <style>
+        /* Основные стили */
+        :root {
+            --bg-color: #f9f9f9;
+            --text-color: #333;
+            --accent-color: #3498db;
+            --section-bg: #fff;
+            --border-color: #eaeaea;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Шапка сайта */
+        header {
+            text-align: center;
+            padding: 60px 0;
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            color: #666;
+        }
+        
+        /* Навигация */
+        nav {
+            background-color: var(--section-bg);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+        
+        nav li {
+            margin: 0 10px;
+        }
+        
+        nav a {
+            display: block;
+            padding: 15px 20px;
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: var(--accent-color);
+        }
+        
+        /* Секции */
+        section {
+            background-color: var(--section-bg);
+            margin: 30px 0;
+            padding: 40px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        
+        h2 {
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+            font-weight: 300;
+            font-size: 1.8rem;
+        }
+        
+        /* Секция "Обо мне" */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+        
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent-color);
+        }
+        
+        /* Секция "Резюме" */
+        .cv-item {
+            margin-bottom: 25px;
+        }
+        
+        .cv-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .cv-item .period {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 8px;
+        }
+        
+        /* Секция "Игры" */
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        
+        .game-card {
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .game-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .game-thumb {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        
+        .game-info {
+            padding: 15px;
+        }
+        
+        .game-info h3 {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .game-info p {
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        
+        .game-link {
+            display: inline-block;
+            padding: 8px 15px;
+            background-color: var(--accent-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 3px;
+            font-size: 0.9rem;
+            transition: background-color 0.3s;
+        }
+        
+        .game-link:hover {
+            background-color: #2980b9;
+        }
+        
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            header {
+                padding: 40px 0;
+            }
+            
+            section {
+                padding: 25px;
+            }
+            
+            .about-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav li {
+                margin: 0;
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header>
+        <div class="container">
+            <h1>Имя Фамилия</h1>
+            <p>Разработчик игр и веб-приложений</p>
+        </div>
+    </header>
+    
+    <!-- Навигация -->
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#about">Обо мне</a></li>
+                <li><a href="#cv">Резюме</a></li>
+                <li><a href="#games">Мои игры</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Основной контент -->
+    <div class="container">
+        <!-- Секция "Обо мне" -->
+        <section id="about">
+            <h2>Обо мне</h2>
+            <div class="about-content">
+                <img src="/api/placeholder/150/150" alt="Фото профиля" class="profile-pic">
+                <div>
+                    <p>Привет! Я разработчик игр и веб-приложений с более чем [X] годами опыта. Специализируюсь на создании HTML5 игр и интерактивных веб-проектов.</p>
+                    <p>Моя страсть — создавать увлекательные игровые механики и интуитивно понятные интерфейсы. В своей работе я стремлюсь к балансу между технической эффективностью и креативным дизайном.</p>
+                    <p>Когда я не пишу код, я люблю [ваши хобби и интересы].</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Секция "Резюме" -->
+        <section id="cv">
+            <h2>Резюме</h2>
+            
+            <!-- Образование -->
+            <div class="cv-subsection">
+                <h3>Образование</h3>
+                
+                <div class="cv-item">
+                    <h3>Название университета</h3>
+                    <div class="period">2015 - 2019</div>
+                    <p>Степень бакалавра в области информационных технологий</p>
+                </div>
+                
+                <div class="cv-item">
+                    <h3>Курсы и сертификаты</h3>
+                    <div class="period">2020</div>
+                    <p>Название курса или программы</p>
+                </div>
+            </div>
+            
+            <!-- Опыт работы -->
+            <div class="cv-subsection">
+                <h3>Опыт работы</h3>
+                
+                <div class="cv-item">
+                    <h3>Разработчик игр - Название компании</h3>
+                    <div class="period">2020 - настоящее время</div>
+                    <p>Разработка HTML5 игр с использованием современных технологий. Участие в полном цикле создания игр от концепции до релиза.</p>
+                </div>
+                
+                <div class="cv-item">
+                    <h3>Веб-разработчик - Название компании</h3>
+                    <div class="period">2019 - 2020</div>
+                    <p>Создание адаптивных веб-сайтов и приложений. Работа с frontend и backend технологиями.</p>
+                </div>
+            </div>
+            
+            <!-- Навыки -->
+            <div class="cv-subsection">
+                <h3>Навыки</h3>
+                <p>HTML5, CSS3, JavaScript, TypeScript, Phaser, Unity, React, Node.js</p>
+            </div>
+        </section>
+        
+        <!-- Секция "Мои игры" -->
+        <section id="games">
+            <h2>Мои игры</h2>
+            <div class="games-grid">
+                <!-- Игра 1 -->
+                <div class="game-card">
+                    <img src="/api/placeholder/300/180" alt="Игра 1" class="game-thumb">
+                    <div class="game-info">
+                        <h3>Название игры 1</h3>
+                        <p>Краткое описание игры с основными механиками и особенностями.</p>
+                        <a href="games/game1/index.html" class="game-link">Играть</a>
+                    </div>
+                </div>
+                
+                <!-- Игра 2 -->
+                <div class="game-card">
+                    <img src="/api/placeholder/300/180" alt="Игра 2" class="game-thumb">
+                    <div class="game-info">
+                        <h3>Название игры 2</h3>
+                        <p>Краткое описание игры с основными механиками и особенностями.</p>
+                        <a href="games/game2/index.html" class="game-link">Играть</a>
+                    </div>
+                </div>
+                
+                <!-- Игра 3 -->
+                <div class="game-card">
+                    <img src="/api/placeholder/300/180" alt="Игра 3" class="game-thumb">
+                    <div class="game-info">
+                        <h3>Название игры 3</h3>
+                        <p>Краткое описание игры с основными механиками и особенностями.</p>
+                        <a href="games/game3/index.html" class="game-link">Играть</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <!-- Подвал сайта -->
+    <footer>
+        <div class="container" style="text-align: center; padding: 30px 0; color: #666; font-size: 0.9rem;">
+            <p>© 2025 Имя Фамилия. Все права защищены.</p>
+        </div>
+    </footer>
+</body>
+</html>
